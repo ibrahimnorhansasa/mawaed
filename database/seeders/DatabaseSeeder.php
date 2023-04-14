@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
      
          CategorySeeder::class,
          CenterSeeder::class,
+         DoctorSeeder::class,
 
       
 

@@ -40,6 +40,14 @@ Route::group(['prefix'=>'v1'], function () {
     Route::post('/sendOtpAgain',         [App\Http\Controllers\API\UserController::class,'sendOtpAgain']);
 
 
+    //medical centers
+    Route::get('/allCenters',[App\Http\Controllers\API\CenterController::class,'index']);
+    Route::get('/showCenter/{center}',[App\Http\Controllers\API\CenterController::class,'show']);
+
+    // doctors
+    Route::get('/allDoctors',[App\Http\Controllers\API\DoctorController::class,'index']);
+    Route::get('/showDoctor/{doctor}',[App\Http\Controllers\API\DoctorController::class,'show']);
+
     Route::group(['middleware' => ['auth:sanctum']],function () {
         
         Route::prefix('user')->group(function(){
